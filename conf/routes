@@ -1,0 +1,27 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET             /bloogi                                    controllers.ApplicationController.index()
+
+# Users API
+GET             /bloogi/api/users                          controllers.UserController.getAll()
+GET             /bloogi/api/users/:id                      controllers.UserController.getById(id)
+POST            /bloogi/api/users                          controllers.UserController.save()
+PUT             /bloogi/api/users/:id                      controllers.UserController.update(id)
+
+
+# Posts API
+GET             /bloogi/api/posts                          controllers.PostController.getAll()
+GET             /bloogi/api/posts/:id                      controllers.PostController.getById(id)
+POST            /bloogi/api/posts                          controllers.PostController.save()
+PUT             /bloogi/api/posts/:id                      controllers.PostController.update(id)
+DELETE          /bloogi/api/posts/:id                      controllers.PostController.delete(id)
+
+
+# Comments API
+GET             /bloogi/api/comments                       controllers.PostController.getAll()
+GET             /bloogi/api/comments/:id                   controllers.PostController.getById(id)
+POST            /bloogi/api/comments                       controllers.PostController.save()
+PUT             /bloogi/api/comments/:id                   controllers.PostController.update(id)
+DELETE          /bloogi/api/comments/:id                   controllers.PostController.delete(id)
