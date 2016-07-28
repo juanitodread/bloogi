@@ -77,10 +77,12 @@ object CommentDao {
   def persistentComment(comment: Comment) = {
     val id = Utils.newMongoId
     Comment(
-      Some(id.stringify),
+      id.stringify,
       comment.content,
       Some(Utils.now),
-      comment.author
+      comment.author,
+      comment.upVotes,
+      comment.downVotes
     )
   }
 }

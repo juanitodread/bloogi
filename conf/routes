@@ -20,8 +20,8 @@ DELETE          /bloogi/api/posts/:id                      controllers.PostContr
 
 
 # Comments API
-GET             /bloogi/api/comments                       controllers.PostController.getAll()
-GET             /bloogi/api/comments/:id                   controllers.PostController.getById(id)
-POST            /bloogi/api/comments                       controllers.PostController.save()
-PUT             /bloogi/api/comments/:id                   controllers.PostController.update(id)
-DELETE          /bloogi/api/comments/:id                   controllers.PostController.delete(id)
+# GET             /bloogi/api/comments                       controllers.PostController.getAll()
+# GET             /bloogi/api/comments/:id                   controllers.PostController.getById(id)
+# POST            /bloogi/api/comments                       controllers.PostController.save()
+# PUT             /bloogi/api/comments/:id                   controllers.PostController.update(id)
+# DELETE          /bloogi/api/comments/:id                   controllers.PostController.delete(id)

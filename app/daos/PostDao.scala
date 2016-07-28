@@ -57,7 +57,7 @@ class PostDao(reactiveMongoApi: ReactiveMongoApi)
 
   def save(entity: Post): Future[WriteResult] = {
     logger.info(s"Save a new post: $entity")
-    val persistentPost = PostDao.persistenPost(entity)
+    val persistentPost = PostDao.persistentPost(entity)
     posts.insert(persistentPost)
   }
 
@@ -75,14 +75,20 @@ class PostDao(reactiveMongoApi: ReactiveMongoApi)
 object PostDao {
   def apply(reactiveMongoApi: ReactiveMongoApi) = new PostDao(reactiveMongoApi)
 
-  def persistenPost(post: Post) = {
+  def persistentPost(post: Post) = {
     val id = Utils.newMongoId
+    val now = Utils.now
+    val url = Utils.generateUrlTitlePost(post.title)
     Post(
       Some(id.stringify),
       post.title,
+      Some(url),
       post.content,
-      Some(Utils.now),
-      post.author
+      Some(now),
+      Some(now),
+      post.author,
+      post.tags,
+      post.comments
     )
   }
 

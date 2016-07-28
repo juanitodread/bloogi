@@ -30,9 +30,13 @@ import play.api.libs.json.Json
 case class Post(
   _id: Option[String],
   title: String,
+  urlTitle: Option[String],
   content: String,
   created: Option[Long],
-  author: SimpleUser
+  modified: Option[Long],
+  author: SimpleUser,
+  tags: Array[String],
+  comments: Array[Comment]
 )
 
 object Post {

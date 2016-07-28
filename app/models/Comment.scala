@@ -28,10 +28,12 @@ import play.api.libs.json.Json
  *
  */
 case class Comment(
-  _id: Option[String],
+  _id: String,
   content: String,
   created: Option[Long],
-  author: SimpleUser
+  author: SimpleUser,
+  upVotes: Array[String],
+  downVotes: Array[String]
 )
 
 object Comment {
