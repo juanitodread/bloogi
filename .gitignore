@@ -11,9 +11,11 @@ tmp/
 test-result
 server.pid
 *.eml
+*.iml
 /dist/
 .cache
 .settings/
 .classpath
 .project
 /project/project/*
+.idea/
